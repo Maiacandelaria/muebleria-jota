@@ -1,16 +1,155 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mueblería Hermanos Jota - Contacto </title>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mueblería Hermanos Jota | Contacto</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/contacto.css" />
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="/css/contacto.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="contenedor site-header__inner">
+        <a class="logo" href="index.html">Hermanos<span>Jota</span></a>
+        <nav class="nav-principal" aria-label="Navegación principal">
+          <a href="index.html">Inicio</a>
+          <a href="productos.html">Catálogo</a>
+          <a href="contacto.html" aria-current="page">Contacto</a>
+        </nav>
+        <a
+          class="carrito-link"
+          href="#"
+          id="carrito-link"
+          aria-label="Ver carrito"
+        >
+          🧺 <span id="carrito-contador" class="carrito-contador">0</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="contacto-hero">
+        <div class="contenedor">
+          <p class="eyebrow">Taller &amp; atención al cliente</p>
+          <h1>Hablemos de tu próximo mueble</h1>
+          <p class="contacto-hero__texto">
+            Cada pieza de Hermanos Jota sale de un taller familiar, no de una
+            línea de producción. Contanos qué estás buscando y te respondemos
+            con la misma atención que le damos a cada tablón de madera que entra
+            al taller.
+          </p>
+        </div>
+      </section>
+
+      <section class="contacto-main">
+        <div class="contenedor contacto-grid">
+          <aside class="panel-info" aria-label="Información de contacto">
+            <div class="panel-info__esquinas" aria-hidden="true">
+              <span class="esquina esquina--tl"></span>
+              <span class="esquina esquina--tr"></span>
+              <span class="esquina esquina--bl"></span>
+              <span class="esquina esquina--br"></span>
+            </div>
+
+            <h2>Taller Hermanos Jota</h2>
+            <p class="panel-info__desc">
+              Trabajamos con stock reducido de piezas listas y producción a
+              medida. Contanos tu proyecto y te contamos los tiempos reales.
+            </p>
+
+            <dl class="panel-info__datos">
+              <div>
+                <dt>Showroom y taller</dt>
+                <dd>Av. San Juan 2847, San Cristóbal, CABA</dd>
+              </div>
+              <div>
+                <dt>Horario de atención</dt>
+                <dd>Lunes a viernes 10 a 19 hs, sábados 10 a 14 hs</dd>
+              </div>
+              <div>
+                <dt>Email</dt>
+                <dd>info@hermanosjota.com.ar</dd>
+              </div>
+              <div>
+                <dt>WhatsApp</dt>
+                <dd>+54 11 4567-8900</dd>
+              </div>
+            </dl>
+
+            <p class="panel-info__firma">- La familia Jota</p>
+          </aside>
+
+          <div class="panel-form">
+            <form id="form-contacto" novalidate>
+              <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  autocomplete="name"
+                  aria-describedby="error-nombre"
+                />
+                <span
+                  class="mensaje-error"
+                  id="error-nombre"
+                  role="alert"
+                ></span>
+              </div>
+
+              <div class="campo">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  aria-describedby="error-email"
+                />
+                <span
+                  class="mensaje-error"
+                  id="error-email"
+                  role="alert"
+                ></span>
+              </div>
+
+              <div class="campo">
+                <label for="mensaje">Mensaje</label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  rows="5"
+                  aria-describedby="error-mensaje"
+                ></textarea>
+                <span
+                  class="mensaje-error"
+                  id="error-mensaje"
+                  role="alert"
+                ></span>
+              </div>
+
+              <button type="submit" class="boton-enviar">Enviar mensaje</button>
+
+              <p class="mensaje-exito" id="mensaje-exito" role="status" hidden>
+                Gracias, recibimos tu mensaje. Te respondemos a la brevedad.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="contenedor">
+        <p>© 2026 Hermanos Jota. Muebles de fábrica familiar.</p>
+      </div>
+    </footer>
+
+    <script src="contacto.js"></script>
+  </body>
 </html>
