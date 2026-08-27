@@ -343,7 +343,7 @@ a {
   border-radius: var(--radio);
   background: #fff;
   color: var(--texto);
-  resize: vertical;
+  resize: none;
 }
 
 .campo input:focus,
