@@ -115,7 +115,7 @@
               </div>
             </dl>
 
-            <p class="panel-info__firma">- La familia Jota</p>
+            <p class="panel-info__firma">— La familia Jota</p>
           </aside>
 
           <div class="panel-form">
@@ -168,15 +168,22 @@
               </div>
 
               <button type="submit" class="boton-enviar">Enviar mensaje</button>
-
-              <p class="mensaje-exito" id="mensaje-exito" role="status" hidden>
-                Gracias, recibimos tu mensaje. Te respondemos a la brevedad.
-              </p>
             </form>
           </div>
         </div>
       </section>
     </main>
+
+    <div class="modal-overlay" id="modal-exito" hidden>
+      <div class="modal" role="status">
+        <p class="modal__texto">
+          Gracias, recibimos tu mensaje. Te respondemos a la brevedad.
+        </p>
+        <button type="button" class="modal__cerrar" id="modal-cerrar">
+          Cerrar
+        </button>
+      </div>
+    </div>
 
     <script src="/js/contacto.js"></script>
   </body>
