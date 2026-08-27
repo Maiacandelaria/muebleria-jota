@@ -7,27 +7,61 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;700&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
     <link rel="stylesheet" href="/css/contacto.css" />
   </head>
   <body>
     <header class="site-header">
       <div class="contenedor site-header__inner">
-        <a class="logo" href="index.html">Hermanos<span>Jota</span></a>
-        <nav class="nav-principal" aria-label="Navegación principal">
+        <a class="logo" href="index.html">
+          <img
+            src="/assets/logo.svg"
+            alt="Hermanos Jota"
+            class="logo__imagen"
+            width="200"
+            height="100"
+          />
+        </a>
+
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav-principal"
+          aria-label="Abrir menú de navegación"
+        >
+          <i class="icono icono-menu fa-solid fa-bars" aria-hidden="true"></i>
+          <i
+            class="icono icono-cerrar fa-solid fa-xmark"
+            aria-hidden="true"
+          ></i>
+        </button>
+
+        <nav
+          class="nav-principal"
+          id="nav-principal"
+          aria-label="Navegación principal"
+        >
           <a href="index.html">Inicio</a>
           <a href="productos.html">Catálogo</a>
           <a href="contacto.html" aria-current="page">Contacto</a>
         </nav>
+
         <a
           class="carrito-link"
           href="#"
           id="carrito-link"
           aria-label="Ver carrito"
         >
-          🧺 <span id="carrito-contador" class="carrito-contador">0</span>
+          <i class="icono fa-solid fa-cart-shopping" aria-hidden="true"></i>
+          <span id="carrito-contador" class="carrito-contador">0</span>
         </a>
       </div>
     </header>
@@ -144,12 +178,6 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="contenedor">
-        <p>© 2026 Hermanos Jota. Muebles de fábrica familiar.</p>
-      </div>
-    </footer>
-
-    <script src="contacto.js"></script>
+    <script src="/js/contacto.js"></script>
   </body>
 </html>
