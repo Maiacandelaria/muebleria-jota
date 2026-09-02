@@ -1,5 +1,3 @@
-// ─── Ejercicio 1: Catálogo de Productos Dinámico ───────────────────────────
-
 const catalogoMuebles = [
   {
     id: 1,
@@ -49,7 +47,6 @@ catalogoMuebles.forEach((producto) => {
   productContainer.appendChild(card);
 });
 
-// ─── Ejercicio 2: Botón de "Añadir a Favoritos" ────────────────────────────
 
 const btnFavoritos = document.querySelector('#btn-favoritos');
 
@@ -63,7 +60,6 @@ btnFavoritos.addEventListener('click', () => {
   }
 });
 
-// ─── Ejercicio 3: Guardar y Cargar Preferencias con JSON ───────────────────
 
 const preferenciasUsuario = {
   tema: 'oscuro',
@@ -90,8 +86,6 @@ btnCargar.addEventListener('click', () => {
     console.log('No hay preferencias guardadas');
   }
 });
-
-// ─── Ejercicio 4: Buscador de Usuarios de una API ──────────────────────────
 
 const formBuscarUsuario = document.getElementById('form-buscar-usuario');
 const resultadoUsuario = document.getElementById('resultado-usuario');
@@ -132,8 +126,6 @@ async function buscarUsuario() {
     resultadoUsuario.textContent = 'Usuario no encontrado';
   }
 }
-
-// ─── Ejercicio 5: Galería de Fotos Asíncrona con Eventos ───────────────────
 
 async function cargarGaleria() {
   const galeriaContainer = document.getElementById('galeria-fotos');
