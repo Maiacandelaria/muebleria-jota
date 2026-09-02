@@ -39,48 +39,33 @@
 
     <section id="productos" aria-labelledby="titulo-productos">
       <h2 id="titulo-productos">Productos destacados</h2>
+      <div id="product-container"></div>
 
-      <article aria-labelledby="producto-mesa">
-        <h3 id="producto-mesa">Mesa de comedor Roble</h3>
-        <p>Mesa extensible en madera maciza de roble, ideal para reuniones familiares.</p>
-        <ul aria-label="Características">
-          <li><span lang="en">Roble</span></li>
-          <li>Extensible</li>
-          <li>Artesanal</li>
-        </ul>
-      </article>
+      <button id="btn-favoritos" type="button">❤️ Añadir a Favoritos</button>
+    </section>
 
-      <article aria-labelledby="producto-sofa">
-        <h3 id="producto-sofa">Sofá modular Linen</h3>
-        <p>Sofá de tres cuerpos con tapizado en lino natural y estructura reforzada.</p>
-        <ul aria-label="Características">
-          <li>Modular</li>
-          <li>Lino</li>
-          <li>Confort</li>
-        </ul>
-      </article>
+    <section id="preferencias" aria-labelledby="titulo-preferencias">
+      <h2 id="titulo-preferencias">Preferencias de usuario</h2>
+      <button id="btn-guardar" type="button">Guardar preferencias</button>
+      <button id="btn-cargar" type="button">Cargar preferencias</button>
+    </section>
 
-      <article aria-labelledby="producto-ropero">
-        <h3 id="producto-ropero">Ropero clásico Cedro</h3>
-        <p>Ropero de dos puertas con acabado en cedro y herrajes de bronce.</p>
-        <ul aria-label="Características">
-          <li>Cedro</li>
-          <li>Amplio</li>
-          <li>Clásico</li>
-        </ul>
-      </article>
+    <section id="buscador" aria-labelledby="titulo-buscador">
+      <h2 id="titulo-buscador">Buscador de usuarios</h2>
+      <form id="form-buscar-usuario">
+        <label for="input-usuario">Nombre de usuario:</label>
+        <input type="text" id="input-usuario" name="username" placeholder="Ej: Bret">
+        <button type="submit">Buscar</button>
+      </form>
+      <div id="resultado-usuario"></div>
+    </section>
 
-      <article aria-labelledby="producto-escritorio">
-        <h3 id="producto-escritorio">Escritorio ejecutivo Nogal</h3>
-        <p>Escritorio con cajonera integrada, perfecto para home office o estudio.</p>
-        <ul aria-label="Características">
-          <li>Nogal</li>
-          <li>Funcional</li>
-          <li>Ejecutivo</li>
-        </ul>
-      </article>
+    <section id="galeria" aria-labelledby="titulo-galeria">
+      <h2 id="titulo-galeria">Galería de fotos</h2>
+      <div id="galeria-fotos"></div>
     </section>
   </main>
 
+  <script src="./app.js"></script>
 </body>
 </html>

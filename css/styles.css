@@ -41,3 +41,119 @@ h1 {
       font-size: 1rem;
     }
   }
+}
+
+/* Ejercicio 1: Catálogo dinámico */
+#product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.product-card {
+  background: #fffaf6;
+  border: 1px solid #ecd9c6;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(107, 66, 38, 0.07);
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.product-card h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: #6b4226;
+}
+
+.product-card p {
+  font-weight: bold;
+  color: #23211d;
+  margin: 0;
+}
+
+/* Ejercicio 2: Botón de favoritos */
+#btn-favoritos {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid #6b4226;
+  border-radius: 8px;
+  background-color: #fffaf6;
+  color: #6b4226;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+#btn-favoritos:hover {
+  background-color: #f5ebe0;
+}
+
+#btn-favoritos.favorito {
+  background-color: #6b4226;
+  color: #fffaf6;
+}
+
+/* Ejercicio 3: Preferencias */
+#preferencias button {
+  margin-right: 0.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #6b4226;
+  border-radius: 6px;
+  background: #fffaf6;
+  cursor: pointer;
+}
+
+/* Ejercicio 4: Buscador */
+#form-buscar-usuario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#form-buscar-usuario input {
+  padding: 0.5rem;
+  border: 1px solid #ecd9c6;
+  border-radius: 6px;
+}
+
+#resultado-usuario {
+  padding: 1rem;
+  background: #fffaf6;
+  border-radius: 8px;
+  border: 1px solid #ecd9c6;
+}
+
+/* Ejercicio 5: Galería */
+#galeria-fotos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 0.75rem;
+}
+
+.galeria-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.galeria-img:hover {
+  transform: scale(1.05);
+}
+
+section {
+  padding: 2rem 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
