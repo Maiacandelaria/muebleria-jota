@@ -1,4 +1,19 @@
 /* Pie de página compartido, basado en la vista de detalle */
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
 .site-footer { margin-top: auto; padding: 3.5rem 0 1.5rem; color: var(--alabastro-calido); background: #2c2523; border-top: 3px solid var(--siena-tostado); }
 .site-footer .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
 .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-bottom: 3rem; }
@@ -14,6 +29,7 @@
 .footer-hours { margin-top: .5rem !important; }
 .footer-contact-info a { color: var(--alabastro-calido); text-decoration: underline; text-underline-offset: 2px; }
 .footer-contact-info a:hover { color: var(--vara-de-oro); }
+.footer-contact-info [data-instagram] { margin-bottom: 1.25rem; }
 .footer-bottom { display: flex; flex-direction: column; gap: .75rem; align-items: center; padding-top: 1.5rem; color: #9c8f84; border-top: 1px solid rgba(255,255,255,.1); font-size: .8125rem; text-align: center; }
 .footer-bottom p { margin: 0; }
 @media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; } .footer-bottom { flex-direction: row; justify-content: space-between; } }
