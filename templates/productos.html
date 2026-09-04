@@ -44,6 +44,54 @@
                 <!-- Se inyecta dinámicamente mediante JavaScript -->
             </div>
         </section>
+
+    
+  <!-- ========================================================================
+       MODAL / ALERT POPUP DE VISTA RÁPIDA EN DETALLE
+       ======================================================================== -->
+  <div id="quickview-modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-container">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Cerrar vista rápida">&times;</button>
+      
+      <div class="modal-grid">
+        <div class="modal-image-wrap">
+          <img id="modal-img" class="modal-img" src="" alt="Mueble">
+        </div>
+
+        <div class="modal-details">
+          <div>
+            <span class="modal-category" id="modal-category">Categoría</span>
+            <h2 class="modal-title" id="modal-title">Nombre del Mueble</h2>
+          </div>
+
+          <p class="modal-price" id="modal-price">$ 0</p>
+          <p class="modal-desc" id="modal-desc">Descripción...</p>
+
+          <!-- Tabla de especificaciones técnicas dinámicas dentro del modal -->
+          <div>
+            <h4 style="font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; color: var(--verde-salvia-dark); margin-bottom: 0.35rem;">Especificaciones Técnicas</h4>
+            <table class="modal-specs-table">
+              <tbody id="modal-specs-body">
+                <!-- Se inyecta dinámicamente con JS -->
+              </tbody>
+            </table>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-modal-add" id="modal-add-cart-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
+              </svg>
+              Añadir al Carrito
+            </button>
+            <a href="producto.html" id="modal-fullpage-link" class="btn-modal-full-page">Ver Página Completa &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     </main>
 
     <footer class="footer-principal">
