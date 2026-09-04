@@ -1,0 +1,916 @@
+/* ==========================================================================
+   MUEBLERÍA HERMANOS JOTA - ESTILOS OFICIALES (Sprint 1 & 2)
+   Manual de Marca 2026 - Vista Detalle de Producto
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* Paleta de Colores Oficial */
+  --siena-tostado: #A0522D;
+  --siena-tostado-hover: #874322;
+  --siena-tostado-dark: #5C2B14;
+  --verde-salvia: #87A96B;
+  --verde-salvia-light: #EBF2E6;
+  --verde-salvia-dark: #557544;
+  --alabastro-calido: #F5E6D3;
+  --alabastro-claro: #FAF6F0;
+  --vara-de-oro: #D4A437;
+  --rosa-polvoriento: #C47A6D;
+  --rosa-polvoriento-light: #F7ECE9;
+
+  /* Colores de Texto y Fondo Neutros */
+  --color-bg: #FAF8F5;
+  --color-card-bg: #FFFFFF;
+  --color-text-main: #2C2523;
+  --color-text-secondary: #6E6259;
+  --color-text-muted: #8F8278;
+  --color-border: #E8DDCE;
+  --color-border-light: #F0E6D8;
+  
+  /* Sombras y Elevaciones */
+  --shadow-sm: 0 2px 8px rgba(44, 37, 35, 0.05);
+  --shadow-md: 0 6px 20px rgba(44, 37, 35, 0.08);
+  --shadow-lg: 0 12px 32px rgba(44, 37, 35, 0.12);
+
+  /* Tipografías */
+  --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-secondary: 'Playfair Display', Georgia, serif;
+
+  /* Transiciones */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.35s ease;
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 20px;
+}
+
+/* --------------------------------------------------------------------------
+   Reset y Base Semántica
+   -------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-main);
+  background-color: var(--color-bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: all var(--transition-fast);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   Encabezado Principal (Header)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(250, 246, 240, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-logo-img {
+  height: 48px;
+  width: auto;
+}
+
+.main-nav {
+  display: none;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-text-main);
+  position: relative;
+  padding: 0.35rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--siena-tostado);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-link.active {
+  color: var(--siena-tostado);
+  font-weight: 600;
+}
+
+/* Acciones del Header (Carrito) */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  color: var(--siena-tostado);
+  box-shadow: var(--shadow-sm);
+}
+
+.cart-button:hover {
+  background-color: var(--alabastro-calido);
+  transform: translateY(-1px);
+}
+
+.cart-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: var(--siena-tostado);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(160, 82, 45, 0.4);
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cart-badge.bump {
+  transform: scale(1.35);
+}
+
+/* --------------------------------------------------------------------------
+   Migas de Pan (Breadcrumbs)
+   -------------------------------------------------------------------------- */
+.breadcrumbs-nav {
+  padding: 1.25rem 0 0.5rem;
+}
+
+.breadcrumbs-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--siena-tostado);
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.breadcrumb-item.active {
+  color: var(--siena-tostado);
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   Sección Principal: Detalle de Producto
+   -------------------------------------------------------------------------- */
+.main-content {
+  flex: 1;
+  padding-bottom: 4rem;
+}
+
+.product-detail-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 1rem;
+}
+
+/* Galería / Imagen Principal */
+.product-gallery {
+  background-color: var(--alabastro-claro);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-badge-sustainability {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: var(--verde-salvia-light);
+  color: var(--verde-salvia-dark);
+  border: 1px solid var(--verde-salvia);
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.product-main-image-container {
+  width: 100%;
+  max-width: 540px;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform var(--transition-medium);
+}
+
+.product-gallery:hover .product-main-img {
+  transform: scale(1.03);
+}
+
+/* Información de Compra */
+.product-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.product-category-tag {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--verde-salvia-dark);
+}
+
+.product-title {
+  font-family: var(--font-secondary);
+  font-size: 2.25rem;
+  line-height: 1.2;
+  color: var(--siena-tostado);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.product-pricing-box {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.product-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  letter-spacing: -0.02em;
+}
+
+.product-installments {
+  font-size: 0.875rem;
+  color: var(--verde-salvia-dark);
+  font-weight: 500;
+}
+
+.product-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+/* Selector de Cantidad y Acciones */
+.purchase-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.quantity-control-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.quantity-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.quantity-stepper {
+  display: inline-flex;
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+.quantity-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  background-color: var(--alabastro-claro);
+  transition: background-color var(--transition-fast);
+}
+
+.quantity-btn:hover:not(:disabled) {
+  background-color: var(--alabastro-calido);
+  color: var(--siena-tostado);
+}
+
+.quantity-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.quantity-input {
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: var(--color-text-main);
+  -moz-appearance: textfield;
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.add-to-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem 1.75rem;
+  background-color: var(--siena-tostado);
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--border-radius-sm);
+  box-shadow: 0 4px 14px rgba(160, 82, 45, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--siena-tostado-hover);
+  box-shadow: 0 6px 20px rgba(160, 82, 45, 0.35);
+  transform: translateY(-2px);
+}
+
+.add-to-cart-btn:active {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Badges de Confianza / Garantía */
+.trust-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.875rem;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background-color: var(--alabastro-claro);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.trust-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  color: var(--siena-tostado);
+}
+
+.trust-text-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.trust-text-sub {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   Sección: Especificaciones Técnicas y Fabricación
+   -------------------------------------------------------------------------- */
+.specs-section {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.section-header-wrap {
+  margin-bottom: 1.5rem;
+}
+
+.section-subtitle {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--verde-salvia-dark);
+}
+
+.section-heading {
+  font-family: var(--font-secondary);
+  font-size: 1.75rem;
+  color: var(--siena-tostado);
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+.specs-table-container {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.specs-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.specs-table tbody tr {
+  border-bottom: 1px solid var(--color-border-light);
+  transition: background-color var(--transition-fast);
+}
+
+.specs-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.specs-table tbody tr:nth-child(even) {
+  background-color: var(--alabastro-claro);
+}
+
+.specs-table tbody tr:hover {
+  background-color: var(--alabastro-calido);
+}
+
+.specs-table th,
+.specs-table td {
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+}
+
+.specs-table th {
+  width: 35%;
+  font-weight: 600;
+  color: var(--color-text-main);
+  border-right: 1px solid var(--color-border-light);
+}
+
+.specs-table td {
+  color: var(--color-text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Banner "Herencia Viva" (Filosofía de Marca)
+   -------------------------------------------------------------------------- */
+.brand-manifesto-banner {
+  margin-top: 3.5rem;
+  background: linear-gradient(135deg, #FAF6F0 0%, #F5E6D3 100%);
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--siena-tostado);
+  border-radius: var(--border-radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.manifesto-title {
+  font-family: var(--font-secondary);
+  font-size: 1.35rem;
+  color: var(--siena-tostado);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.manifesto-text {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   Notificación Toast / Alerta Flotante Personalizada
+   -------------------------------------------------------------------------- */
+.toast-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 1.5rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  pointer-events: none;
+}
+
+.custom-toast {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--verde-salvia);
+  border-left: 5px solid var(--verde-salvia-dark);
+  padding: 1rem 1.25rem;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-lg);
+  min-width: 320px;
+  max-width: 420px;
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.35s ease;
+}
+
+.custom-toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toast-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--verde-salvia-light);
+  color: var(--verde-salvia-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toast-body {
+  flex: 1;
+}
+
+.toast-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.toast-msg {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.15rem;
+}
+
+.toast-close-btn {
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+  line-height: 1;
+  padding: 0.25rem;
+}
+
+.toast-close-btn:hover {
+  color: var(--siena-tostado);
+}
+
+/* --------------------------------------------------------------------------
+   Estado de Carga (Skeleton Loader & Fallback)
+   -------------------------------------------------------------------------- */
+.loading-skeleton {
+  animation: skeleton-pulse 1.5s infinite ease-in-out;
+  background: linear-gradient(90deg, #EFE7DC 25%, #FAF5EE 50%, #EFE7DC 75%);
+  background-size: 200% 100%;
+  border-radius: var(--border-radius-sm);
+}
+
+@keyframes skeleton-pulse {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.product-not-found {
+  text-align: center;
+  padding: 5rem 1.5rem;
+  background-color: var(--alabastro-claro);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  margin-top: 2rem;
+}
+
+.product-not-found h2 {
+  font-family: var(--font-secondary);
+  color: var(--siena-tostado);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.product-not-found p {
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--siena-tostado);
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--border-radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-secondary:hover {
+  background-color: var(--siena-tostado-hover);
+}
+
+/* --------------------------------------------------------------------------
+   Tarjetas de Productos Relacionados
+   -------------------------------------------------------------------------- */
+.related-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--siena-tostado);
+  box-shadow: var(--shadow-md);
+}
+
+/* --------------------------------------------------------------------------
+   Pie de Página (Footer Semántico)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  background-color: #2C2523;
+  color: #FAF6F0;
+  padding: 3.5rem 0 1.5rem;
+  border-top: 3px solid var(--siena-tostado);
+  margin-top: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand-title {
+  font-family: var(--font-secondary);
+  font-size: 1.35rem;
+  color: var(--alabastro-calido);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.footer-desc {
+  font-size: 0.875rem;
+  color: #C2B7AC;
+  line-height: 1.6;
+}
+
+.footer-col-heading {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--vara-de-oro);
+  margin-bottom: 1rem;
+}
+
+.footer-links-list li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links-list a {
+  font-size: 0.875rem;
+  color: #D6CCC2;
+}
+
+.footer-links-list a:hover {
+  color: var(--alabastro-calido);
+  text-decoration: underline;
+}
+
+.footer-contact-info {
+  font-size: 0.875rem;
+  color: #D6CCC2;
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: #9C8F84;
+}
+
+/* --------------------------------------------------------------------------
+   Media Queries Responsivas (Desktop y Tablet)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .main-nav {
+    display: block;
+  }
+
+  .product-detail-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .product-gallery {
+    flex: 1;
+    position: sticky;
+    top: 100px;
+    padding: 2.5rem;
+  }
+
+  .product-info-panel {
+    flex: 1.1;
+  }
+
+  .product-title {
+    font-size: 2.75rem;
+  }
+
+  .purchase-controls {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .add-to-cart-btn {
+    flex: 1;
+  }
+
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-detail-layout {
+    gap: 4rem;
+  }
+
+  .product-title {
+    font-size: 3rem;
+  }
+
+  .specs-table th {
+    width: 28%;
+  }
+}
