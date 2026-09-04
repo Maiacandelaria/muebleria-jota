@@ -126,3 +126,39 @@
     padding: 3rem;
     color: #666;
 }
+
+/* Corrección del Encabezado y Navegación /
+.header-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--blanco);
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.logo {
+    height: 50px; / Controla el tamaño del logo SVG /
+    width: auto;
+    display: block;
+}
+
+.nav-principal ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none; / Elimina los puntos de la lista */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-principal a {
+    text-decoration: none;
+    color: var(--texto-oscuro);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-principal a:hover,
+.nav-principal a.active {
+    color: var(--siena-tostado);
+}
