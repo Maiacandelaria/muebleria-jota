@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Productos | Hermanos Jota</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/productos.css">
+</head>
+<body>
+
+    <header class="header-principal">
+        <div class="logo-container">
+            <a href="../index.html">
+                <img src="../assets/logo.svg" alt="Logo Hermanos Jota" class="logo">
+            </a>
+        </div>
+        <nav class="nav-principal">
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="productos.html" class="active">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="catalogo-main">
+        <section class="encabezado-catalogo">
+            <h1>Nuestra Colección</h1>
+            <p>Piezas únicas de mobiliario diseñadas con materiales sostenibles y acabado artesanal.</p>
+            
+            <div class="buscador-container">
+                <input 
+                    type="text" 
+                    id="input-busqueda" 
+                    placeholder="Buscar por nombre o material..." 
+                    aria-label="Buscar productos"
+                >
+            </div>
+        </section>
+
+        <section class="contenedor-grilla">
+            <div id="grid-productos" class="grid-productos">
+                <!-- Se inyecta dinámicamente mediante JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-principal">
+        <p>&copy; 2026 Hermanos Jota Muebles. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="../js/productos.js"></script>
+</body>
+</html>
