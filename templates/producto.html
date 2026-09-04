@@ -16,6 +16,10 @@
 
   <!-- Hoja de Estilos Oficial -->
   <link rel="stylesheet" href="../css/producto.css">
+  <link rel="stylesheet" href="../css/brand-theme.css">
+  <link rel="stylesheet" href="../css/typography.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/footer.css">
 </head>
 <body>
 
@@ -75,19 +79,19 @@
     <!-- Skeleton Loader (Estado de Carga Asíncrona) -->
     <div id="product-loader" aria-busy="true" aria-label="Cargando detalles del producto">
       <div class="product-detail-layout">
-        <div class="loading-skeleton" style="height: 420px; border-radius: 12px; flex: 1;"></div>
-        <div style="flex: 1.1; display: flex; flex-direction: column; gap: 1.25rem;">
-          <div class="loading-skeleton" style="height: 24px; width: 35%;"></div>
-          <div class="loading-skeleton" style="height: 52px; width: 85%;"></div>
-          <div class="loading-skeleton" style="height: 38px; width: 45%;"></div>
-          <div class="loading-skeleton" style="height: 100px; width: 100%;"></div>
-          <div class="loading-skeleton" style="height: 52px; width: 65%;"></div>
+        <div class="loading-skeleton skeleton-image"></div>
+        <div class="skeleton-details">
+          <div class="loading-skeleton skeleton-category"></div>
+          <div class="loading-skeleton skeleton-title"></div>
+          <div class="loading-skeleton skeleton-price"></div>
+          <div class="loading-skeleton skeleton-description"></div>
+          <div class="loading-skeleton skeleton-action"></div>
         </div>
       </div>
     </div>
 
     <!-- Mensaje de Error (Producto no encontrado) -->
-    <div id="product-error" class="product-not-found" style="display: none;">
+    <div id="product-error" class="product-not-found is-hidden">
       <h2>Producto no encontrado</h2>
       <p>El mueble que estás buscando no se encuentra en nuestro catálogo o ha cambiado de enlace.</p>
       <a href="productos.html" class="btn-secondary">
@@ -100,7 +104,7 @@
     </div>
 
     <!-- Contenido del Producto Renderizado Dinámicamente -->
-    <div id="product-content" style="display: none;">
+    <div id="product-content" class="is-hidden">
       <section class="product-detail-layout" aria-label="Detalle del producto">
         
         <!-- Galería / Imagen Principal del Mueble -->
@@ -205,25 +209,33 @@
            Banner "Herencia Viva" (Filosofía de Marca)
            ==================================================================== -->
       <section class="brand-manifesto-banner" aria-label="Compromiso de longevidad">
+        <span class="section-subtitle">Compromiso de longevidad</span>
         <h3 class="manifesto-title">Programa Herencia Viva</h3>
         <p class="manifesto-text">
           Cada mueble de Hermanos Jota es fabricado con maderas nativas certificadas FSC®, acabados con aceites 100% ecológicos de bajo COV y diseñado para envejecer con gracia a lo largo de las décadas. Ofrecemos servicio de restauración y garantía extendida en estructura.
         </p>
+        <ul class="longevity-benefits">
+          <li><strong>Garantía extendida</strong><span>10 años en estructura y 5 años en acabados.</span></li>
+          <li><strong>Servicio de restauración</strong><span>Recuperamos y renovamos piezas antiguas.</span></li>
+          <li><strong>Taller de cuidados</strong><span>Capacitación gratuita para clientes.</span></li>
+          <li><strong>Recompra garantizada</strong><span>Hasta 40% del valor en piezas bien cuidadas.</span></li>
+          <li><strong>Certificado de trazabilidad</strong><span>Origen de cada material utilizado.</span></li>
+        </ul>
       </section>
 
       <!-- ====================================================================
            Sección: Productos Relacionados de la Colección
            ==================================================================== -->
-      <section class="related-products-section" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--color-border);" aria-labelledby="related-heading">
-        <div class="section-header-wrap" style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;">
+      <section class="related-products-section" aria-labelledby="related-heading">
+        <div class="section-header-wrap related-products-header">
           <div>
             <span class="section-subtitle">Completá tu espacio</span>
             <h2 class="section-heading" id="related-heading">Piezas Relacionadas</h2>
           </div>
-          <a href="productos.html" style="color: var(--siena-tostado); font-weight: 600; font-size: 0.9rem; text-decoration: underline;">Ver Catálogo Completo &rarr;</a>
+          <a href="productos.html" class="related-catalog-link">Ver Catálogo Completo &rarr;</a>
         </div>
 
-        <div id="related-products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.75rem;">
+        <div id="related-products-grid" class="related-products-grid">
           <!-- Inyectado dinámicamente -->
         </div>
       </section>
@@ -232,7 +244,7 @@
   </main>
 
   <!-- Contenedor invisible para evitar errores en DOMContentLoaded de productos.js -->
-  <div id="grid-productos" style="display: none;" aria-hidden="true"></div>
+  <div id="grid-productos" class="visually-hidden" aria-hidden="true"></div>
 
   <!-- ========================================================================
        Contenedor de Notificaciones Flotantes (Toast Alert)
@@ -257,8 +269,8 @@
         <h4 class="footer-col-heading">Navegación</h4>
         <ul class="footer-links-list">
           <li><a href="../index.html">Inicio</a></li>
-          <li><a href="productos.html">Catálogo Completo</a></li>
-          <li><a href="contacto.html">Contacto y Showroom</a></li>
+          <li><a href="productos.html">Catálogo</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
 
@@ -268,7 +280,7 @@
         <div class="footer-contact-info">
           <p>Av. San Juan 2847 (San Cristóbal)</p>
           <p>Ciudad Autónoma de Buenos Aires</p>
-          <p style="margin-top: 0.5rem;"><strong>Horarios:</strong> Lun a Vie 10:00 - 19:00</p>
+          <p class="footer-hours"><strong>Horarios:</strong> Lun a Vie 10:00 - 19:00</p>
           <p><strong>WhatsApp:</strong> +54 11 4567-8900</p>
         </div>
       </div>
@@ -283,5 +295,7 @@
   <!-- Scripts de la Aplicación -->
   <script src="../js/productos.js"></script>
   <script src="../js/producto.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/brand.js"></script>
 </body>
 </html>

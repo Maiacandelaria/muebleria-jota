@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap');
+
+/* Sistema tipográfico compartido de Hermanos Jota */
+:root {
+  --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-secondary: 'Playfair Display', Georgia, serif;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-primary);
+}
+
+body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+h1,
+.page-title,
+.product-title {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+h2,
+h3,
+.section-heading,
+.footer-brand-title,
+.manifesto-title {
+  font-family: var(--font-secondary);
+  font-weight: 700;
+}
+
+.hero-eyebrow,
+.section-eyebrow,
+.section-subtitle,
+.featured-category,
+.journey-card__step,
+.product-category-tag,
+.modal-category,
+.caption,
+small {
+  font-family: var(--font-primary);
+  font-size: .75rem;
+  font-weight: 300;
+  letter-spacing: .02em;
+}
+
+.nav-link,
+.home-button,
+.btn-detalle,
+.add-to-cart-btn,
+.btn-secondary,
+.btn-modal-add,
+.btn-modal-full-page,
+.boton-enviar {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}

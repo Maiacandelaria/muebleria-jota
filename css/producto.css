@@ -629,6 +629,20 @@ ul, ol {
   color: var(--color-text-secondary);
   line-height: 1.7;
 }
+.is-hidden { display: none; }
+.skeleton-image { height: 420px; flex: 1; border-radius: var(--border-radius-md); }
+.skeleton-details { display: flex; flex: 1.1; flex-direction: column; gap: 1.25rem; }
+.skeleton-category { width: 35%; height: 24px; }
+.skeleton-title { width: 85%; height: 52px; }
+.skeleton-price { width: 45%; height: 38px; }
+.skeleton-description { width: 100%; height: 100px; }
+.skeleton-action { width: 65%; height: 52px; }
+
+.longevity-benefits { display: grid; grid-template-columns: 1fr; gap: .75rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+.longevity-benefits li { padding: .85rem 1rem; background: rgba(255, 255, 255, .58); border: 1px solid var(--color-border); border-radius: var(--border-radius-sm); }
+.longevity-benefits strong, .longevity-benefits span { display: block; }
+.longevity-benefits strong { color: var(--siena-tostado); font-size: .9rem; }
+.longevity-benefits span { margin-top: .2rem; color: var(--color-text-secondary); font-size: .85rem; }
 
 /* --------------------------------------------------------------------------
    Notificación Toast / Alerta Flotante Personalizada
@@ -773,12 +787,28 @@ ul, ol {
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
+.related-products-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--color-border); }
+.related-products-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2rem; }
+.related-products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.75rem; }
+.visually-hidden { display: none; }
+.related-catalog-link { color: var(--siena-tostado); font-size: .9rem; font-weight: 600; text-decoration: underline; }
+.footer-hours { margin-top: .5rem !important; }
 
 .related-card:hover {
   transform: translateY(-4px);
   border-color: var(--siena-tostado);
   box-shadow: var(--shadow-md);
 }
+.specs-empty-cell { color: var(--color-text-muted); text-align: center; }
+.related-card-image-wrap { display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 3; padding: 1.25rem; background: var(--alabastro-claro); }
+.related-card-image { width: 100%; height: 100%; object-fit: contain; }
+.related-card-body { display: flex; flex: 1; flex-direction: column; padding: 1.25rem; }
+.related-card-category { margin-bottom: .25rem; color: var(--verde-salvia-dark); font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.related-card-title { margin: 0 0 .5rem; color: var(--siena-tostado); font-family: var(--font-secondary); font-size: 1.25rem; font-weight: 700; }
+.related-card-title a { color: inherit; text-decoration: none; }
+.related-card-price { margin: auto 0 .85rem; color: var(--color-text-main); font-size: 1.1rem; font-weight: 700; }
+.related-card-link { display: block; padding: .5rem 1rem; color: var(--siena-tostado); border: 1px solid var(--siena-tostado); border-radius: var(--border-radius-sm); font-size: .8125rem; font-weight: 600; text-align: center; text-decoration: none; text-transform: uppercase; transition: background-color var(--transition-fast), color var(--transition-fast); }
+.related-card-link:hover { color: #fff; background: var(--siena-tostado); }
 
 /* --------------------------------------------------------------------------
    Pie de Página (Footer Semántico)
@@ -857,6 +887,7 @@ ul, ol {
    Media Queries Responsivas (Desktop y Tablet)
    -------------------------------------------------------------------------- */
 @media (min-width: 768px) {
+  .longevity-benefits { grid-template-columns: repeat(2, 1fr); }
   .main-nav {
     display: block;
   }

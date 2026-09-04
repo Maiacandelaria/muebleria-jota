@@ -1,0 +1,51 @@
+/* Paleta oficial Hermanos Jota: un único origen para todo el sitio */
+:root {
+  --siena-tostado: #A0522D;
+  --verde-salvia: #87A96B;
+  --alabastro-calido: #F5E6D3;
+  --vara-de-oro: #D4A437;
+  --rosa-polvoriento: #C47A6D;
+
+  --siena-tostado-hover: #874322;
+  --siena-tostado-dark: #5C2B14;
+  --verde-salvia-dark: #557544;
+  --verde-salvia-light: #EBF2E6;
+  --rosa-polvoriento-light: #F7ECE9;
+  --alabastro: var(--alabastro-calido);
+  --alabastro-claro: #FAF6F0;
+
+  --color-bg: #FAF8F5;
+  --color-card-bg: #FFFFFF;
+  --color-text-main: #2C2523;
+  --color-text-secondary: #6E6259;
+  --color-border: #E8DDCE;
+  --texto: var(--color-text-main);
+  --texto-suave: var(--color-text-secondary);
+  --superficie: var(--color-card-bg);
+  --navbar-siena: var(--siena-tostado);
+  --navbar-bg: rgba(245, 230, 211, .96);
+  --navbar-text: var(--color-text-main);
+  --navbar-border: var(--color-border);
+  --navbar-card: var(--color-card-bg);
+}
+
+/* Variantes de aplicación de marca */
+.brand-primary {
+  color: var(--siena-tostado);
+  background-color: var(--alabastro-claro);
+}
+
+.brand-inverted {
+  color: var(--alabastro-calido);
+  background-color: #2C2523;
+}
+
+.brand-monochrome {
+  color: #000;
+  background-color: #fff;
+}
+
+.brand-monochrome--inverse {
+  color: #fff;
+  background-color: #000;
+}

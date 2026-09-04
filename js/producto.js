@@ -339,7 +339,7 @@ function renderizarEspecificaciones(especificaciones) {
 
   if (!especificaciones || Object.keys(especificaciones).length === 0) {
     const row = document.createElement("tr");
-    row.innerHTML = `<td colspan="2" style="text-align: center; color: var(--color-text-muted);">Sin especificaciones adicionales.</td>`;
+    row.innerHTML = '<td colspan="2" class="specs-empty-cell">Sin especificaciones adicionales.</td>';
     tableBody.appendChild(row);
     return;
   }
@@ -382,30 +382,18 @@ function renderizarProductosRelacionados(currentProduct) {
     card.className = "related-card";
 
     card.innerHTML = `
-      <div style="background-color: var(--alabastro-claro); aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; padding: 1.25rem;">
-        <img src="${prod.imagen}" alt="${prod.nombre}" style="width: 100%; height: 100%; object-fit: contain;">
+      <div class="related-card-image-wrap">
+        <img src="${prod.imagen}" alt="${prod.nombre}" class="related-card-image">
       </div>
-      <div style="padding: 1.25rem; display: flex; flex-direction: column; flex: 1;">
-        <span style="font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--verde-salvia-dark); letter-spacing: 0.08em; margin-bottom: 0.25rem;">${prod.categoria}</span>
-        <h3 style="font-family: var(--font-secondary); font-size: 1.25rem; color: var(--siena-tostado); font-weight: 700; margin-bottom: 0.5rem;">
-          <a href="producto.html?id=${prod.id}" style="color: inherit; text-decoration: none;">${prod.nombre}</a>
+      <div class="related-card-body">
+        <span class="related-card-category">${prod.categoria}</span>
+        <h3 class="related-card-title">
+          <a href="producto.html?id=${prod.id}">${prod.nombre}</a>
         </h3>
-        <p style="font-size: 1.1rem; font-weight: 700; color: var(--color-text-main); margin-top: auto; margin-bottom: 0.85rem;">${formatearPrecio(prod.precio)}</p>
-        <a href="producto.html?id=${prod.id}" style="display: block; text-align: center; padding: 0.5rem 1rem; border: 1px solid var(--siena-tostado); color: var(--siena-tostado); font-weight: 600; font-size: 0.8125rem; text-transform: uppercase; border-radius: var(--border-radius-sm); text-decoration: none; transition: background-color var(--transition-fast), color var(--transition-fast);">Ver Detalle</a>
+        <p class="related-card-price">${formatearPrecio(prod.precio)}</p>
+        <a href="producto.html?id=${prod.id}" class="related-card-link">Ver Detalle</a>
       </div>
     `;
-
-    const btnDetalle = card.querySelector("a[href^='producto.html']");
-    if (btnDetalle) {
-      btnDetalle.addEventListener("mouseenter", () => {
-        btnDetalle.style.backgroundColor = "var(--siena-tostado)";
-        btnDetalle.style.color = "#FFFFFF";
-      });
-      btnDetalle.addEventListener("mouseleave", () => {
-        btnDetalle.style.backgroundColor = "transparent";
-        btnDetalle.style.color = "var(--siena-tostado)";
-      });
-    }
 
     relatedGrid.appendChild(card);
   });
@@ -543,6 +531,9 @@ function actualizarBadgeCarrito() {
   badge.classList.remove("bump");
   void badge.offsetWidth;
   badge.classList.add("bump");
+  if (typeof window.actualizarNavbarCarrito === "function") {
+    window.actualizarNavbarCarrito();
+  }
 }
 
 // ==========================================================================

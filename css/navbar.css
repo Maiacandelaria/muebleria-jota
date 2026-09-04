@@ -1,0 +1,41 @@
+/* Navegación compartida de Hermanos Jota */
+:root {
+  --navbar-siena: var(--siena-tostado, #A0522D);
+  --navbar-bg: rgba(245, 230, 211, 0.96);
+  --navbar-text: var(--color-text-main, #2C2523);
+  --navbar-border: var(--color-border, #E8DDCE);
+  --navbar-card: var(--color-card-bg, #FFFFFF);
+}
+
+.site-header { position: sticky; top: 0; z-index: 100; background: var(--navbar-bg); border-bottom: 1px solid var(--navbar-border); box-shadow: 0 2px 8px rgba(44, 37, 35, 0.08); backdrop-filter: blur(12px); }
+.site-header .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+.header-inner { position: relative; display: flex; align-items: center; justify-content: space-between; min-height: 76px; gap: 1rem; }
+.brand-logo, .cart-button, .nav-toggle { display: inline-flex; align-items: center; justify-content: center; }
+.brand-logo-img { display: block; width: auto; height: 48px; }
+.main-nav { display: none; }
+.main-nav.is-open { display: block; position: absolute; z-index: 110; top: calc(100% - .5rem); right: 1.25rem; left: 1.25rem; padding: 1rem; background: var(--navbar-card); border: 1px solid var(--navbar-border); border-radius: .75rem; box-shadow: 0 10px 28px rgba(44, 37, 35, .14); }
+.nav-list { display: flex; flex-direction: column; gap: .25rem; margin: 0; padding: 0; list-style: none; }
+.nav-link { display: block; padding: .65rem .75rem; color: var(--navbar-text); font-size: .95rem; font-weight: 600; letter-spacing: .03em; text-decoration: none; border-radius: .4rem; }
+.nav-link:hover, .nav-link:focus-visible, .nav-link.active { color: var(--navbar-siena); background: #faf1e8; }
+.nav-toggle, .cart-button { width: 44px; height: 44px; padding: 0; color: var(--navbar-siena); background: var(--navbar-card); border: 1px solid var(--navbar-border); border-radius: 50%; cursor: pointer; }
+.nav-toggle:hover, .nav-toggle:focus-visible, .cart-button:hover, .cart-button:focus-visible { background: #f5e6d3; outline: none; }
+.nav-toggle-icon, .cart-icon { width: 22px; height: 22px; }
+.header-actions { display: flex; align-items: center; gap: .75rem; }
+.cart-button { position: relative; }
+.cart-badge { position: absolute; top: -5px; right: -5px; display: flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; padding: 0 5px; color: #fff; background: var(--navbar-siena); border-radius: 999px; font-size: .75rem; font-weight: 700; }
+.cart-badge.bump { animation: navbar-bump .3s ease; }
+@keyframes navbar-bump { 50% { transform: scale(1.25); } }
+
+@media (max-width: 767px) {
+  .header-inner { justify-content: flex-start; }
+  .brand-logo { margin-right: auto; }
+  .nav-toggle { order: 2; }
+  .header-actions { order: 3; }
+}
+
+@media (min-width: 768px) {
+  .nav-toggle { display: none; }
+  .main-nav, .main-nav.is-open { display: block; position: static; padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+  .nav-list { flex-direction: row; align-items: center; gap: .5rem; }
+  .nav-link { padding: .5rem .65rem; background: transparent; }
+}

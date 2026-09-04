@@ -1,0 +1,19 @@
+/* Pie de página compartido, basado en la vista de detalle */
+.site-footer { margin-top: auto; padding: 3.5rem 0 1.5rem; color: var(--alabastro-calido); background: #2c2523; border-top: 3px solid var(--siena-tostado); }
+.site-footer .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+.footer-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-bottom: 3rem; }
+.footer-brand-title { margin: 0 0 .75rem; color: var(--alabastro-calido); font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; letter-spacing: .05em; }
+.footer-desc { margin: 0; color: #c2b7ac; font-size: .875rem; line-height: 1.6; }
+.footer-col-heading { margin: 0 0 1rem; color: var(--vara-de-oro); font-size: .875rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.footer-links-list { margin: 0; padding: 0; list-style: none; }
+.footer-links-list li { margin-bottom: .6rem; }
+.footer-links-list a { color: #d6ccc2; font-size: .875rem; text-decoration: none; }
+.footer-links-list a:hover { color: var(--alabastro-calido); text-decoration: underline; }
+.footer-contact-info { color: #d6ccc2; font-size: .875rem; line-height: 1.6; }
+.footer-contact-info p { margin: 0; }
+.footer-hours { margin-top: .5rem !important; }
+.footer-contact-info a { color: var(--alabastro-calido); text-decoration: underline; text-underline-offset: 2px; }
+.footer-contact-info a:hover { color: var(--vara-de-oro); }
+.footer-bottom { display: flex; flex-direction: column; gap: .75rem; align-items: center; padding-top: 1.5rem; color: #9c8f84; border-top: 1px solid rgba(255,255,255,.1); font-size: .8125rem; text-align: center; }
+.footer-bottom p { margin: 0; }
+@media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; } .footer-bottom { flex-direction: row; justify-content: space-between; } }
