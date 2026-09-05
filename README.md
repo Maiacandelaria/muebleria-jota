@@ -6,7 +6,7 @@ Sitio web responsive para la mueblería Hermanos Jota, orientado a mostrar un ca
 
 - Figueredo,Maia Rita Candelaria
 - Peralta Cassutti, Noah Nicanor
-- Uriel
+- Ponce, Uriel Joaquín 
 
 ## Funcionalidades
 
